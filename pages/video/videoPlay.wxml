@@ -1,4 +1,4 @@
 <!--pages/video/videoPlay.wxml-->
 <view class='container'>
-  <video class='video-view' src='http://baobab.kaiyanapp.com/api/v1/playUrl?vid=114217&resourceType=video&editionType=normal&source=aliyun'></video>
+  <video class='video-view' src='{{videoEntity.playUrl}}'></video>
 </view>

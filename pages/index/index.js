@@ -9,6 +9,9 @@ Page({
 
   onLoad: function() {
     var _this = this
+    wx.showLoading({
+      title: '正在加载...',
+    })
     wx.request({
       url: 'http://baobab.kaiyanapp.com/api/v2/feed',
       data: {
@@ -18,6 +21,7 @@ Page({
         'content-type': 'application/json'
       },
       success: function(res) {
+        wx.hideLoading()
         var newList = new Array()
         var videoList = res.data.issueList[0].itemList
         for (var i = 0; i < videoList.length; i++) {
@@ -30,6 +34,7 @@ Page({
         })
       },
       fail: function(error) {
+        wx.hideLoading()
         console.log(error)
       }
     })
