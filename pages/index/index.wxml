@@ -1,0 +1,13 @@
+<!--index.wxml-->
+<view class="container">
+  <navigator class='card' wx:for='{{list}}' url='../video/videoPlay?path={{item.data.playUrl}}' wx:key="key">
+    <image class='card-cover' src='{{item.data.cover.feed}}'></image>
+    <view class='card-hor'>
+      <image class='card-avatar' src='{{item.data.author.icon}}'></image>
+      <view class='card-port'>
+        <text class='card-title'>{{item.data.title}}</text>
+        <text class='card-tag'>#{{item.data.tags[0].name}}</text>
+      </view>
+    </view>
+  </navigator>
+</view>
