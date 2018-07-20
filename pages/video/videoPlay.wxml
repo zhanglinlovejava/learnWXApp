@@ -1,4 +1,20 @@
 <!--pages/video/videoPlay.wxml-->
 <view class='container'>
-  <video class='video-view' src='{{videoEntity.playUrl}}'></video>
+  <view class="video">
+    <video id='myVideo' class='video-view' src='{{url}}' autoplay='true'></video>
+  </view>
+  <scroll-view class="main" scroll-y="true">
+    <view class='video-root'>
+      <text class='video-title'>{{title}}</text>
+      <text class='video-category'>#{{category}}/{{duration}}'</text>
+      <text class='video-desc'>{{desc}}</text>
+      <view class='video-list' wx:for='{{list}}' wx:key='key' bindtap='playVideo' data-url='{{item.data.playUrl}}'>
+        <image class='video-feed' src='{{item.data.cover.feed}}'></image>
+        <view class='video-list-txt'>
+          <text class='video-title'>{{item.data.title}}</text>
+          <text class='video-category'>#{{item.data.category}}/{{item.data.duration}}</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
 </view>

@@ -1,5 +1,79 @@
 /* pages/video/videoPlay.wxss */
-.video-view{
+.video{
+  position: fixed;
+  width:100%;
+  top:0;
+  height: 39%;
+  z-index: 999;
+
+ 
+}
+ 
+.main {
+  box-sizing: border-box;
+  height:61%;
+  position: fixed;
+  bottom: 0;
+}
+
+.video-view {
   width: 100%;
-  height: 200px;
+}
+
+.video-root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #6c6165;
+}
+
+.video-list {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+
+.video-list-txt {
+  width: 100%;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+}
+
+.video-title {
+  width: 100%;
+  font-size: 20sp;
+  color: #fff;
+  margin: 10px;
+  padding-right: 5px;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  align-content: center;
+}
+
+.video-category {
+  width: 100%;
+  font-size: 10sp;
+  color: #ccc;
+  margin-left: 10px;
+}
+
+.video-desc {
+  width: 100%;
+  font-size: 6sp;
+  color: #ddd;
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.video-feed {
+  width: 200px;
+  height: 70px;
+  margin-left: 10px;
 }

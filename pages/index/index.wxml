@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="container">
-  <navigator class='card' wx:for='{{list}}' url='../video/videoPlay?videoEntity={{item.data}}' wx:key="key">
+  <navigator class='card' wx:for='{{list}}' url='../video/videoPlay?id={{item.data.id}}&title={{item.data.title}}&desc={{item.data.description}}&duration={{item.data.duration}}&category={{item.data.category}}' wx:key="key">
     <image class='card-cover' src='{{item.data.cover.feed}}'></image>
     <view class='card-hor'>
       <image class='card-avatar' src='{{item.data.author.icon}}'></image>
