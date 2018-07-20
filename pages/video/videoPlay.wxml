@@ -1,4 +1,17 @@
 <!--pages/video/videoPlay.wxml-->
 <view class='container'>
-  <video class='video-view' src='{{videoEntity.playUrl}}'></video>
+  <video id='myVideo' class='video-view' src='{{url}}'></video>
+  <view class='video-root'>
+
+    <text class='video-title' style="text-overflow: -o-ellipsis-lastline; overflow: hidden;text-overflow: ellipsis; display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;align-content: center;">{{title}}</text>
+    <text class='video-category'>#{{category}}/{{duration}}</text>
+    <text class='video-desc'>{{desc}}</text>
+    <navigator class='video-list' wx:for='{{list}}' wx:key='key'>
+      <image class='video-feed' src='{{item.data.cover.feed}}'></image>
+      <view class='video-list-txt'>
+        <text class='video-title' style="text-overflow: -o-ellipsis-lastline; overflow: hidden;text-overflow: ellipsis; display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;align-content: center;">{{item.data.title}}</text>
+        <text class='video-category'>#{{item.data.category}}/{{item.data.duration}}</text>
+      </view>
+    </navigator>
+  </view>
 </view>

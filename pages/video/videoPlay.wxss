@@ -1,5 +1,54 @@
 /* pages/video/videoPlay.wxss */
-.video-view{
+
+.video-view {
   width: 100%;
   height: 200px;
+}
+
+.video-root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-image: url('http://img.kaiyanapp.com/f31b4170c1b1a9c295b1cd74f3b56b72.jpeg?imageMogr2/quality/60/format/jpg/thumbnail/1280x720');
+}
+
+
+.video-list {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+}
+.video-list-txt {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.video-title {
+  width: 100%;
+  font-size: 20sp;
+  color: #fff;
+  margin: 10px;
+  
+}
+.video-category {
+  width: 100%;
+  font-size: 13sp;
+  color: #ccc;
+  margin-left: 10px;
+  
+}
+.video-desc {
+  width: 100%;
+  font-size: 12sp;
+  color: #ddd;
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+.video-feed{
+  width: 150px;
+  height: 80px;
+  margin-right: 10px;
 }
