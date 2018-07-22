@@ -1,20 +1,16 @@
 <!--pages/video/videoPlay.wxml-->
 
-<view class='container'>
-  <view class="video">
-    <video id='myVideo' class='video-view' src='{{url}}' autoplay='true'></video>
-  </view>
+<view class='video-container'>
+  <video id='myVideo' class='video' src='{{url}}' autoplay='true'></video>
   <scroll-view class="main" scroll-y="true" scroll-top='{{scroll_top}}'>
-    <view class='video-root'>
-      <text class='video-title'>{{title}}</text>
-      <text class='video-category'>#{{category}}/{{duration}}</text>
-      <text class='video-desc'>{{desc}}</text>
-      <view class='video-list' wx:for='{{list}}' wx:key='key' bindtap='playVideo' data-url='{{item.data.playUrl}}' data-id='{{item.data.id}}' data-title='{{item.data.title}}' data-desc='{{item.data.description}}' data-category='{{item.data.category}}' data-duration='{{item.data.duration}}'>
-        <image class='video-feed' src='{{item.data.cover.feed}}'></image>
-        <view class='video-list-txt'>
-          <text class='video-title'>{{item.data.title}}</text>
-          <text class='video-category'>#{{item.data.category}}/{{item.data.duration}}"</text>
-        </view>
+    <text class='video-title'>{{title}}</text>
+    <text class='video-category'>#{{category}}/{{duration}}</text>
+    <text class='video-desc'>{{desc}}</text>
+    <view class='video-list' wx:for='{{list}}' wx:key='key' bindtap='playVideo' data-url='{{item.data.playUrl}}' data-id='{{item.data.id}}' data-title='{{item.data.title}}' data-desc='{{item.data.description}}' data-category='{{item.data.category}}' data-duration='{{item.data.duration}}'>
+      <image class='video-feed' src='{{item.data.cover.feed}}'></image>
+      <view class='video-list-txt'>
+        <text class='video-title'>{{item.data.title}}</text>
+        <text class='video-category'>#{{item.data.category}}/{{item.data.duration}}"</text>
       </view>
     </view>
   </scroll-view>
