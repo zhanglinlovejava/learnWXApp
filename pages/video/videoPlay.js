@@ -3,6 +3,7 @@ var oldList
 var _this
 var newList = new Array()
 var videoContext
+let utils = require('../../utils/util')
 Page({
   data: {
     list: [],
@@ -11,7 +12,8 @@ Page({
     title: "",
     desc: "",
     duration: "",
-    category: ""
+    category: "",
+    scroll_top: 0
   },
 
   /**
@@ -23,7 +25,7 @@ Page({
       id: options.id,
       title: options.title,
       desc: options.desc,
-      duration: options.duration,
+      duration: utils.formatDuration(options.duration),
       category: options.category,
       url: "http://baobab.kaiyanapp.com/api/v1/playUrl?vid=" + options.id + "&resourceType=video&editionType=default&source=aliyun"
     })
@@ -58,7 +60,13 @@ Page({
   },
   playVideo: function(e) {
     this.setData({
-      url: e.currentTarget.dataset.url
+      url: e.currentTarget.dataset.url,
+      id: e.currentTarget.dataset.id,
+      title: e.currentTarget.dataset.title,
+      desc: e.currentTarget.dataset.desc,
+      duration: utils.formatDuration(e.currentTarget.dataset.duration),
+      category: e.currentTarget.dataset.category,
+      scroll_top: 0
     })
     videoContext.play()
     this.loadData(this.data.id)
