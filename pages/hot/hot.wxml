@@ -1,2 +1,41 @@
 <!--pages/hot/hot.wxml-->
-<text>pages/hot/hot.wxml</text>
+<view class='swiper-tab'>
+  <text class='swiper-tab-text {{currentIndex==0?"on":""}}' bindtap='switchTab' data-index='0'>周排行</text>
+  <text class='swiper-tab-text {{currentIndex==1?"on":""}}' bindtap='switchTab' data-index='1'>月排行</text>
+  <text class='swiper-tab-text {{currentIndex==2?"on":""}}' bindtap='switchTab' data-index='2'>总排行</text>
+</view>
+<swiper class='swiper' current='{{currentIndex}}' bindchange='bindChange' duration='200'>
+  <swiper-item>
+    <scroll-view class='scroll-views' scroll-y='true' scroll-x='false'>
+      <navigator wx:for='{{weekRankList}}' wx:key="key" class='category-list'>
+        <view class='category-box'>
+          <view class='lunboImage' style='background-image:url({{item.data.cover.feed}})'>
+            <text class='category-name'>#{{item.data.category}}/{{item.data.duration}}'</text>
+          </view>
+        </view>
+      </navigator>
+    </scroll-view>
+  </swiper-item>
+  <swiper-item>
+    <scroll-view class='scroll-views' scroll-y='true' scroll-x='false'>
+      <navigator wx:for='{{monthRankList}}' wx:key="key" class='category-list'>
+        <view class='category-box'>
+          <view class='lunboImage' style='background-image:url({{item.data.cover.feed}})'>
+            <text class='category-name'>#{{item.data.category}}/{{item.data.duration}}'</text>
+          </view>
+        </view>
+      </navigator>
+    </scroll-view>
+  </swiper-item>
+  <swiper-item>
+    <scroll-view class='scroll-views' scroll-y='true' scroll-x='false'>
+      <navigator wx:for='{{totalRankList}}' wx:key="key" class='category-list'>
+        <view class='category-box' style='background-image:url({{item.data.cover.feed}})'>
+          <view class='lunboImage' style='background-image:url({{item.data.cover.feed}})'>
+            <text class='category-name'>#{{item.data.category}}/{{item.data.duration}}'</text>
+          </view>
+        </view>
+      </navigator>
+    </scroll-view>
+  </swiper-item>
+</swiper>

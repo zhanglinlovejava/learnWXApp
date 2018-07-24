@@ -1,2 +1,44 @@
 <!--pages/discover/discover.wxml-->
-<text>pages/discover/discover.wxml</text>
+<view class='container'>
+  <view class='swiper-tab'>
+    <text class='swiper-tab-text {{currentIndex==0?"on":""}}' bindtap='switchTab' data-index='0'>关注</text>
+    <text class='swiper-tab-text {{currentIndex==1?"on":""}}' bindtap='switchTab' data-index='1'>分类</text>
+  </view>
+  <swiper class='swiper' current='{{currentIndex}}' bindchange='bindChange' duration='200'>
+    <swiper-item>
+      <scroll-view class='scroll-views' scroll-y='true' scroll-x='false' bindscrolltolower="loadMoreFollow">
+        <block wx:for='{{relatedList}}' wx:key="key">
+          <view class='follow-header-row'>
+            <image class='follow-header-avatar' src='{{item.data.header.icon}}'></image>
+            <view class='follow-header-col'>
+              <text class='follow-header-desc'>{{item.data.header.title}}</text>
+              <text class='follow-header-desc'>{{item.data.header.description}}</text>
+            </view>
+            <text class='follow-header-follow'>+关注</text>
+          </view>
+          <scroll-view class='follow-header-horizontal-list' scroll-x='true'>
+            <navigator class='follow-header-horizontal-box' wx:for='{{item.data.itemList}}' wx:key="key1" url='../video/videoPlay?id={{item.data.id}}&title={{item.data.title}}&desc={{item.data.description}}&duration={{item.data.duration}}&category={{item.data.category}}'>
+              <view class='follow-header-horizontal-content'>
+                <image class='follow-header-horizontal-cover' src='{{item.data.cover.feed}}'></image>
+                <text class='follow-header-horizontal-title'>{{item.data.title}}</text>
+                <text class='follow-header-horizontal-title'>#{{item.data.category}}/{{item.data.duration}}</text>
+              </view>
+              <view class='divide-line'></view>
+            </navigator>
+          </scroll-view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view class='scroll-views' scroll-y='true' scroll-x='false'>
+        <navigator wx:for='{{categoryList}}' wx:key="key" class='category-list'>
+          <view class='category-box'>
+            <view class='lunboImage' style='background-image:url({{item.bgPicture}})'>
+              <text class='category-name'>#{{item.name}}</text>
+            </view>
+          </view>
+        </navigator>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>

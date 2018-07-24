@@ -1,7 +1,5 @@
 // pages/video/videoPlay.js
-var oldList
 var _this
-var newList = new Array()
 var videoContext
 let utils = require('../../utils/util')
 Page({
@@ -82,19 +80,14 @@ Page({
       },
       success: function(result) {
         wx.hideLoading()
-        oldList = result.data.itemList;
-        newList = []
-        for (var i = 0; i < oldList.length; i++) {
-          if (oldList[i].type == "videoSmallCard") {
-            newList.push(oldList[i])
-          }
-        }
+        console.log(result.data)
         _this.setData({
-          list: newList
+          list: result.data.itemList
         })
       },
       fail: function(error) {
         wx.hideLoading()
+        console.log(error)
       }
     })
   }
