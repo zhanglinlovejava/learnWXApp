@@ -8,8 +8,8 @@ Page({
    */
   data: {
     currentIndex: 0,
-    relatedList:[],
-    categoryList:[]
+    relatedList: [],
+    categoryList: []
   },
 
   /**
@@ -17,65 +17,73 @@ Page({
    */
   onLoad: function(options) {
     _this = this
-    this.loadRelated("http://baobab.kaiyanapp.com/api/v4/tabs/follow")
+    this.loadRelated("http://baobab.kaiyanapp.com/api/v4/tabs/follow",false)
     this.loadCategories()
   },
-  switchTab:function(e){
+  switchTab: function(e) {
     var index = e.currentTarget.dataset.index
-    if(index === _this.data.currentIndex){
+    if (index === _this.data.currentIndex) {
       return false
-    }else{
+    } else {
       _this.setData({
-        currentIndex:index
+        currentIndex: index
       })
     }
   },
-  bindChange:function(e){
+  bindChange: function(e) {
     _this.setData({
-      currentIndex:e.detail.current
+      currentIndex: e.detail.current
     })
   },
-  loadRelated:function(url){
-    wx.showLoading({
-      title: '正在加载...',
-    })
+  loadRelated: function(url, isLoadMore) {
+    if (isLoadMore) {
+      wx.showNavigationBarLoading()
+    } else {
+      wx.showLoading({
+        title: '正在加载...',
+      })
+    }
     wx.request({
       url: url,
-      success:function(result){
+      success: function(result) {
         nextFollowUrl = result.data.nextPageUrl
         _this.setData({
           relatedList: _this.data.relatedList.concat(result.data.itemList)
         })
         wx.hideLoading()
+        wx.hideNavigationBarLoading()
       },
-      fail:function(error){
+      fail: function(error) {
         wx.hideLoading()
+        wx.hideNavigationBarLoading()
         console.log(error)
       }
     })
   },
-  loadCategories: function () {
+  loadCategories: function() {
     wx.showLoading({
       title: '正在加载...',
     })
     wx.request({
       url: 'http://baobab.kaiyanapp.com/api/v4/categories',
-      success: function (result) {
+      success: function(result) {
         _this.setData({
           categoryList: result.data
         })
         wx.hideLoading()
       },
-      fail: function (error) {
+      fail: function(error) {
         wx.hideLoading()
       }
     })
   },
-  onReachBottom: function () {
-   
-  },
-  loadMoreFollow:function(e){
+  loadMoreFollow: function(e) {
     console.log(nextFollowUrl)
-    _this.loadRelated(nextFollowUrl)
+    _this.loadRelated(nextFollowUrl,true)
+  },
+  onShow: function() {
+    wx.setNavigationBarTitle({
+      title: '发现',
+    })
   }
 })

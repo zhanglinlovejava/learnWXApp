@@ -1,0 +1,40 @@
+/* pages/categoryDetail/categoryDetail.wxss */
+.category-list {
+  width: 100%;
+}
+
+.scroll-views {
+  height: 100%;
+}
+.category-box {
+  background: #000;
+  width: 100vw;
+  height: 400rpx;
+  position:relative;
+  align-items: center;
+}
+
+.lunboImage {
+  background: #000;
+   width: 100vw;
+  height: 400rpx;
+  color: #fff;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-mask: -webkit-linear-gradient(rgba(26, 8, 8, 0.8), rgba(26, 8, 8, 0.8), rgba(0, 0, 0, 0.8), rgba(26, 8, 8, 0.8));
+}
+
+.category-name {
+  position: absolute;
+  font-size: 16pt;
+  height: 80rpx;
+  z-index: 1;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 160rpx;
+  text-align: center;
+  color:#fff;
+  overflow: hidden;
+}

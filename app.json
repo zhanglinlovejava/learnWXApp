@@ -5,12 +5,14 @@
     "pages/hot/hot",
     "pages/discover/discover",
     "pages/mine/mine",
-    "pages/video/videoPlay"
+    "pages/video/videoPlay",
+    "pages/categoryDetail/categoryDetail",
+    "pages/history/history"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {

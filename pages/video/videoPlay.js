@@ -19,6 +19,9 @@ Page({
    */
   onLoad: function(options) {
     _this = this
+    wx.setNavigationBarTitle({
+      title: options.title,
+    })
     this.setData({
       id: options.id,
       title: options.title,
@@ -68,6 +71,9 @@ Page({
     })
     videoContext.play()
     this.loadData(this.data.id)
+    wx.setNavigationBarTitle({
+      title: e.currentTarget.dataset.title,
+    })
   },
   loadData: function(id) {
     wx.showLoading({

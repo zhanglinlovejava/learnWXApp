@@ -7,7 +7,7 @@
 <swiper class='swiper' current='{{currentIndex}}' bindchange='bindChange' duration='200'>
   <swiper-item>
     <scroll-view class='scroll-views' scroll-y='true' scroll-x='false'>
-      <navigator wx:for='{{weekRankList}}' wx:key="key" class='category-list'>
+      <navigator wx:for='{{weekRankList}}' wx:key="key" class='category-list' url='../video/videoPlay?id={{item.data.id}}&title={{item.data.title}}&desc={{item.data.description}}&duration={{item.data.duration}}&category={{item.data.category}}'>
         <view class='category-box'>
           <view class='lunboImage' style='background-image:url({{item.data.cover.feed}})'>
             <text class='category-name'>#{{item.data.category}}/{{item.data.duration}}'</text>
@@ -18,7 +18,7 @@
   </swiper-item>
   <swiper-item>
     <scroll-view class='scroll-views' scroll-y='true' scroll-x='false'>
-      <navigator wx:for='{{monthRankList}}' wx:key="key" class='category-list'>
+      <navigator wx:for='{{monthRankList}}' wx:key="key" class='category-list' url='../video/videoPlay?id={{item.data.id}}&title={{item.data.title}}&desc={{item.data.description}}&duration={{item.data.duration}}&category={{item.data.category}}'>
         <view class='category-box'>
           <view class='lunboImage' style='background-image:url({{item.data.cover.feed}})'>
             <text class='category-name'>#{{item.data.category}}/{{item.data.duration}}'</text>
@@ -29,7 +29,7 @@
   </swiper-item>
   <swiper-item>
     <scroll-view class='scroll-views' scroll-y='true' scroll-x='false'>
-      <navigator wx:for='{{totalRankList}}' wx:key="key" class='category-list'>
+      <navigator wx:for='{{totalRankList}}' wx:key="key" class='category-list' url='../video/videoPlay?id={{item.data.id}}&title={{item.data.title}}&desc={{item.data.description}}&duration={{item.data.duration}}&category={{item.data.category}}'>
         <view class='category-box' style='background-image:url({{item.data.cover.feed}})'>
           <view class='lunboImage' style='background-image:url({{item.data.cover.feed}})'>
             <text class='category-name'>#{{item.data.category}}/{{item.data.duration}}'</text>

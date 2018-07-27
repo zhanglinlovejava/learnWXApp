@@ -1,4 +1,5 @@
 <!--pages/discover/discover.wxml-->
+
 <view class='container'>
   <view class='swiper-tab'>
     <text class='swiper-tab-text {{currentIndex==0?"on":""}}' bindtap='switchTab' data-index='0'>关注</text>
@@ -21,7 +22,7 @@
               <view class='follow-header-horizontal-content'>
                 <image class='follow-header-horizontal-cover' src='{{item.data.cover.feed}}'></image>
                 <text class='follow-header-horizontal-title'>{{item.data.title}}</text>
-                <text class='follow-header-horizontal-title'>#{{item.data.category}}/{{item.data.duration}}</text>
+                <text class='follow-header-horizontal-title'>#{{item.data.category}}/{{item.data.duration}}'</text>
               </view>
               <view class='divide-line'></view>
             </navigator>
@@ -31,7 +32,7 @@
     </swiper-item>
     <swiper-item>
       <scroll-view class='scroll-views' scroll-y='true' scroll-x='false'>
-        <navigator wx:for='{{categoryList}}' wx:key="key" class='category-list'>
+        <navigator wx:for='{{categoryList}}' wx:key="key" class='category-list' url='../categoryDetail/categoryDetail?id={{item.id}}&title={{item.name}}'>
           <view class='category-box'>
             <view class='lunboImage' style='background-image:url({{item.bgPicture}})'>
               <text class='category-name'>#{{item.name}}</text>

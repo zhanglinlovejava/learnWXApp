@@ -1,2 +1,7 @@
 <!--pages/mine/mine.wxml-->
-<text>pages/mine/mine.wxml</text>
+<view class='root'>
+  <image class="user-avatar" src='{{avatarUrl}}'></image>
+  <text class='user-name'>{{name}}</text>
+  <button style='width:200rpx; font-size:10pt' hidden='{{hideUserButton}}' open-type='getUserInfo' bindtap='getUser'>获取用户信息</button>
+ <navigator class='user-item' url='../history/history'>观看历史</navigator>
+</view>

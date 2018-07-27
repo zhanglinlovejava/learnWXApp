@@ -12,19 +12,23 @@ Page({
 
   onLoad: function() {
     _this = this
-    _this.loadData(firstPageUrl)
+    _this.loadData(firstPageUrl,false)
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function() {
-    _this.loadData(nextPageUrl)
+    _this.loadData(nextPageUrl,true)
   },
-  loadData: function(url) {
-    wx.showLoading({
-      title: '正在加载...',
-    })
+  loadData: function(url,isLoadMore) {
+    if(isLoadMore){
+      wx.showNavigationBarLoading()
+    }else{
+      wx.showLoading({
+        title: '正在加载...',
+      })
+    }
     wx.request({
       url: url,
       header: {
@@ -32,6 +36,7 @@ Page({
       },
       success: function(res) {
         wx.hideLoading()
+        wx.hideNavigationBarLoading()
         var videoList = res.data.issueList[0].itemList
         nextPageUrl = res.data.nextPageUrl
         for (var i = 0; i < videoList.length; i++) {
@@ -45,7 +50,13 @@ Page({
       },
       fail: function(error) {
         wx.hideLoading()
+        wx.hideNavigationBarLoading()
       }
+    })
+  },
+  onShow:function(){
+    wx.setNavigationBarTitle({
+      title: '每日精选',
     })
   }
 })

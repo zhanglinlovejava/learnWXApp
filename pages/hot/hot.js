@@ -74,5 +74,10 @@ Page({
     _this.setData({
       currentIndex: e.detail.current
     })
+  },
+  onShow: function () {
+    wx.setNavigationBarTitle({
+      title: '热门',
+    })
   }
 })

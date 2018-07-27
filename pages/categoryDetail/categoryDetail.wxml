@@ -1,0 +1,10 @@
+<!--pages/categoryDetail/categoryDetail.wxml-->
+<view class='container'>
+  <navigator wx:for='{{categoryList}}' wx:key="key" class='category-list' url='../video/videoPlay?id={{item.data.id}}&title={{item.data.title}}&desc={{item.data.description}}&duration={{item.data.duration}}&category={{item.data.category}}'>
+    <view class='category-box'>
+      <view class='lunboImage' style='background-image:url({{item.data.cover.feed}})'>
+        <text class='category-name'>#{{item.data.category}}/{{item.data.duration}}'</text>
+      </view>
+    </view>
+  </navigator>
+</view>
