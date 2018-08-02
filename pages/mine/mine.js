@@ -8,7 +8,8 @@ Page({
   data: {
     avatarUrl: "",
     name: "",
-    hideUserButton:true
+    hideUserButton: true,
+    list: []
   },
 
   /**
@@ -17,6 +18,10 @@ Page({
   onLoad: function(options) {
     _this = this
     _this.getUser()
+
+  },
+  onShow: function() {
+   
   },
   getUser: function() {
     wx.showNavigationBarLoading()

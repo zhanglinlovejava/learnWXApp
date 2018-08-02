@@ -1,6 +1,5 @@
-
 const formatDuration = function(duration) {
-  var minute = parseInt(duration/ 60)
+  var minute = parseInt(duration / 60)
   var second = duration % 60
   if (minute <= 9) {
     if (second <= 9) {
@@ -17,7 +16,7 @@ const formatDuration = function(duration) {
   }
 }
 
-const formatSecond = duration =>{
+const formatSecond = duration => {
   var minute = parseInt(duration / 60)
   var second = duration % 60
   if (minute <= 9) {
@@ -36,7 +35,16 @@ const formatSecond = duration =>{
 
 }
 
+const saveVideoId = id => {
+  array.push(id)
+  wx.setStorage({
+    key: 'videoId',
+    data: id,
+  })
+}
+
 module.exports = {
-  formatSecond:formatSecond,
+  formatSecond: formatSecond,
+  saveVideoId:saveVideoId,
   formatDuration: formatDuration
 }

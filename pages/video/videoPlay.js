@@ -30,28 +30,8 @@ Page({
       category: options.category,
       url: "http://baobab.kaiyanapp.com/api/v1/playUrl?vid=" + options.id + "&resourceType=video&editionType=default&source=aliyun"
     })
+    
     this.loadData(this.data.id)
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
-    videoContext = wx.createVideoContext("myVideo")
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function() {
-
   },
   /**
    * 生命周期函数--监听页面卸载
@@ -86,7 +66,6 @@ Page({
       },
       success: function(result) {
         wx.hideLoading()
-        console.log(result.data)
         _this.setData({
           list: result.data.itemList
         })

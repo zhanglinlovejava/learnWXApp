@@ -1,2 +1,26 @@
-<!--pages/history/history.wxml-->
-<text>pages/history/history.wxml</text>
+<!--pages/video/videoPlay.wxml-->
+
+<view class='container'>
+  
+  
+    <text class='video-title'>{{title}}</text>
+    <view>
+      <text class='video-category'>#{{category}}/{{duration}}</text>
+    </view>
+    <text class='video-desc'>{{desc}}</text>
+    <view  class='video-list' wx:for='{{list}}' wx:key='key'>
+        <view class='video-label-root' hidden='{{item.type!="textCard"}}'>
+          <text class='video-label'>{{item.data.text}}</text>
+          <image class='video-arrow' src='../../images/arrow.png'></image>
+        </view>
+
+        <view class='video-list' hidden='{{item.type!="videoSmallCard"}}'  bindtap='playVideo' data-url='{{item.data.playUrl}}' data-id='{{item.data.id}}' data-title='{{item.data.title}}' data-desc='{{item.data.description}}' data-category='{{item.data.category}}' data-duration='{{item.data.duration}}' >
+          <image class='video-feed' src='{{item.data.cover.feed}}'></image>
+          <view class='video-list-txt'>
+            <text class='video-title'>{{item.data.title}}</text>
+            <text class='video-category'>#{{item.data.category}}/{{item.data.duration}}"</text>
+          </view>
+        </view>
+    </view>
+  
+</view>
