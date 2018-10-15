@@ -21,7 +21,7 @@ Page({
 
   },
   onShow: function() {
-   
+    console.log(getApp().globalNumber +"--globalNumber-")
   },
   getUser: function() {
     wx.showNavigationBarLoading()

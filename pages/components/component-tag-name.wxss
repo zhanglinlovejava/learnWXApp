@@ -1,0 +1,7 @@
+/* pages/components/component-tag-name.wxss */
+.wrapper{
+  
+}
+:host{
+  color:green;
+}

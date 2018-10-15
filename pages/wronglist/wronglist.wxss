@@ -1,0 +1,173 @@
+/* pages/wronglist/wronglist.wxss */
+
+page {
+  height: 100%;
+  width: 100%;
+}
+
+.root {
+  height: 100%;
+  width: 100%;
+  background: #eee;
+  padding-top: 20rpx;
+  padding-bottom: 160rpx;
+}
+
+.box {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 30rpx;
+  background: white;
+  border-bottom: 1px solid #eee;
+  align-items: center;
+}
+
+.food-num {
+  color: gray;
+  font-size: 13pt;
+}
+
+.label {
+  color: #555;
+  font-size: 12pt;
+}
+
+.control-count {
+  display: flex;
+  align-items: center;
+}
+
+.count {
+  display: inline-block;
+  margin: 0 20rpx;
+}
+
+.icon {
+  display: inline-block;
+  height: 50rpx;
+  width: 50rpx;
+}
+
+.refund-price {
+  color: #f83;
+  font-size: 12pt;
+}
+
+.switch-label{
+  font-size: 12pt;
+  color: gray;
+  text-align: center;
+}
+
+.tag-layout {
+  background: white;
+  border-bottom: 1rpx solid #eee;
+  padding: 0 30rpx 30rpx 10rpx;
+}
+
+.tag-label {
+  display: block;
+  padding-left: 20rpx;
+  padding-top: 30rpx;
+  padding-bottom: 20rpx;
+  font-size: 12pt;
+  color: #555;
+}
+
+.tag-list {
+  display: inline-block;
+}
+
+.tag {
+  align-items: center;
+  border: 1rpx solid #ccc;
+  border-radius: 7rpx;
+  margin: 15rpx 20rpx;
+  padding: 15rpx 35rpx;
+  font-size: 10pt;
+  color: gray;
+}
+
+.tag-on {
+  color: #f83;
+  border: 1rpx solid #f83;
+}
+
+.textarea-layout {
+  background: white;
+  display: flex;
+  position: relative;
+}
+
+.textarea {
+  width: 100%;
+  background: #f8f8f8;
+  margin: 30rpx;
+  padding: 20rpx;
+  font-size: 10pt;
+  max-height: 200rpx;
+  border: 1rpx solid #ccc;
+  border-radius: 10rpx;
+}
+
+.textarea-count {
+  position: absolute;
+  right: 50rpx;
+  bottom: 30rpx;
+  color: #aaa;
+  font-size: 10pt;
+}
+
+.image-list {
+  display: inline-block;
+  position: relative;
+}
+
+.image {
+  width: 139rpx;
+  height: 139rpx;
+  margin: 20rpx 15rpx;
+}
+
+.delete {
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  right: -10rpx;
+  top: -5rpx;
+}
+
+.image-label {
+  display: inline-block;
+  font-size: 12pt;
+  color: gray;
+  margin-left: 20rpx;
+}
+
+.image-must {
+  display: inline-block;
+  font-size: 12pt;
+  color: #f83;
+}
+
+.image-warning {
+  font-size: 8pt;
+  padding: 0 20rpx 20rpx 20rpx;
+  color: gray;
+  background:white;
+}
+
+.commit-layout {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 20rpx 30rpx;
+  background: white;
+  border: 1px solid #ccc;
+}
+
+.commit {
+  color: white;
+  background: #3e414f;
+}

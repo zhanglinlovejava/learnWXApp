@@ -42,9 +42,17 @@ const saveVideoId = id => {
     data: id,
   })
 }
+function sayHello(name){
+  console.log(`Hello ${name} !`)
+}
+function sayGoodbye(name){
+  console.log(`Goodbye ${name} !`)
+}
 
 module.exports = {
   formatSecond: formatSecond,
   saveVideoId:saveVideoId,
-  formatDuration: formatDuration
+  formatDuration: formatDuration,
+  sayHello:sayHello,
+  sayGoodbye:sayGoodbye
 }

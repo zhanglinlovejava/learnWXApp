@@ -6,8 +6,8 @@
     <text class='video-title'>{{title}}</text>
     <view>
       <text class='video-category'>#{{category}}/{{duration}}</text>
-    </view>
-    <text class='video-desc'>{{desc}}</text>
+    </view> 
+     <text class='video-desc'>{{desc}}</text> 
     <view  class='video-list' wx:for='{{list}}' wx:key='key'>
         <view class='video-label-root' hidden='{{item.type!="textCard"}}'>
           <text class='video-label'>{{item.data.text}}</text>

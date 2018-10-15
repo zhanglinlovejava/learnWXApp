@@ -19,7 +19,7 @@
   color: #000;
 }
 .user-item{
-  margin-top: 100rpx;
+  margin-top: 50rpx;
   font-size: 15pt;
   color: #000;
 }

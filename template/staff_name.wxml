@@ -1,0 +1,3 @@
+<template name="staffName2">
+  <view>First:{{firstName}},last:{{lastName}}</view>
+</template>

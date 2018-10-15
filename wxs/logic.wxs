@@ -1,0 +1,4 @@
+var common = require("./common.wxs")
+console.log(common.foo)
+console.log(common.bar("logic.wxs-lin--"))
+console.log(common.msg)

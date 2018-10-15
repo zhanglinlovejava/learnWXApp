@@ -3,5 +3,8 @@
   <image class="user-avatar" src='{{avatarUrl}}'></image>
   <text class='user-name'>{{name}}</text>
   <button style='width:200rpx; font-size:10pt' hidden='{{hideUserButton}}' open-type='getUserInfo' bindtap='getUser'>获取用户信息</button>
- <navigator class='user-item' url='../history/history'>观看历史</navigator>
+  <navigator class='user-item' url='../history/history'>观看历史</navigator>
+  <navigator class='user-item' url='../../../../wronglist/wronglist'>错单投诉</navigator>
+  <!-- <navigator class='user-item' url='../test/test?params=this is onload params'>Learn API</navigator> -->
+
 </view>

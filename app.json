@@ -7,7 +7,9 @@
     "pages/mine/mine",
     "pages/video/videoPlay",
     "pages/categoryDetail/categoryDetail",
-    "pages/history/history"
+    "pages/history/history",
+    "pages/test/test",
+    "pages/wronglist/wronglist"
   ],
   "window": {
     "backgroundTextStyle": "light",

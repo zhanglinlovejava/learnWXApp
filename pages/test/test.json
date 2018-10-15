@@ -1,0 +1,5 @@
+{
+  "usingComponents":{
+    "my-com":"../components/component-tag-name"
+  }
+}

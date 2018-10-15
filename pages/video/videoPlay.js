@@ -56,6 +56,7 @@ Page({
     })
   },
   loadData: function(id) {
+    wx.setStorageSync('videoId', id)
     wx.showLoading({
       title: '正在加载...',
     })

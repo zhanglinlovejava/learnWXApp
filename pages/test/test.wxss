@@ -1,0 +1,12 @@
+
+/* pages/test/test.wxss */
+@import "../../wxss/common.wxss";
+.middle-p{
+  padding:15px;
+}
+.canvas-style{
+  border: 1px solid;
+  margin: 5px;
+  
+}
+

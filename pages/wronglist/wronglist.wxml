@@ -1,0 +1,61 @@
+<!--pages/wronglist/wronglist.wxml-->
+<scroll-view>
+  <view class='root'>
+    <view class='box'>
+      <view>
+        <view>油泼拌面</view>
+        <view class='food-num'>x 1</view>
+      </view>
+      <view class='food-num'>￥16</view>
+    </view>
+    <view class='box' style='margin-top:20rpx'>
+      <view class='label'>申请件数</view>
+      <view class='control-count'>
+        <image class='icon' src='../../images/subtract.png' bindtap='subtract'></image>
+        <view class='count'>{{foodNum}}</view>
+        <image bindtap='add' class='icon' src='../../images/add.png'></image>
+      </view>
+    </view>
+    <view class='box'>
+      <view class='label'>申请退款金额</view>
+      <view class='conrol-count'>
+        <view class='refund-price'>￥16</view>
+      </view>
+    </view>
+    <view class='tag-layout'>
+      <view class='tag-label'>申请退款原因</view>
+      <view>
+        <view wx:for="{{tagArray}}" class='tag-list' wx:key="tags">
+          <view class='tag {{ selectedTags[index]===index? "tag-on":""}}' bindtap='toggleTag' data-idx='{{index}}'>{{item}}</view>
+        </view>
+      </view>
+    </view>
+    <view class='box'>
+      <view class='switch-label'>所购商品上是否贴有多个标签</view>
+      <switch></switch>
+    </view>
+    <view class='textarea-layout'>
+      <textarea maxlength='200' class='textarea' placeholder='请您吐槽让您不满意的问题， 我们将不断改进力争为你提供满意的服务 ' bindinput='onInput' />
+      <view class='textarea-count'>{{fbLength}}/200</view>
+    </view>
+    <view style='background:white;'>
+      <view class='image-label '>照片凭证</view>
+      <view class='image-must '>(必填)</view>
+    </view>
+    <scroll-view scroll-x="true" style='background:white;'>
+      <view>
+        <view wx:for="{{images}}" wx:key="images" class='image-list'>
+          <image src="{{item}}" class='image'></image>
+          <image class='delete' src='../../images/delete.png' bindtap='deleteImage'></image>
+        </view>
+        <image hover-class='add-image-hover' class='image' src='../../images/add_image.png' bindtap='chooseImage' data-idx='{{index}}' hidden='{{images.length>=5}}'></image>
+      </view>
+    </scroll-view>
+    <view class='image-warning'>请上传商品包装袋上黄色标签及货架的图片，最多可传
+      <text style='color:#f83;'>5</text> 张
+    </view>
+  </view>
+</scroll-view>
+<view class='commit-layout '>
+  <button class='commit'>提交申请</button>
+</view>

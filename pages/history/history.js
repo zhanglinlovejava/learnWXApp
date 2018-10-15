@@ -16,15 +16,16 @@ Page({
     wx.setNavigationBarTitle({
       title: '观看历史',
     })
-    wx.showLoading({
-      title: '正在加载...',
-    })
+
     wx.getStorage({
       key: 'videoId',
       success: function (res) {
-        _this.loadData(res.data)
         console.log(res.data)
+        _this.loadData(res.data)
       },
+      fail:function(error){
+        console.log(error)
+      }
     })
   },
   loadData: function (id) {
